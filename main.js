@@ -1,4 +1,5 @@
 const percep = Perceptron(dataset.length)
 
 console.log(percep)
-percep.predict()
+
+percep.fit(dataset, desiredOutput)

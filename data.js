@@ -15,5 +15,5 @@ const desiredOutput = [
   1, -1, 1, -1, 1, -1, -1, 1, 1, 1, -1
 ]
 
-console.table(dataset)
-console.log(desiredOutput)
+/* console.table(dataset)
+console.log(desiredOutput) */
