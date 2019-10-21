@@ -1,8 +1,5 @@
-function newNeuron() {
-  return {
-    teste: 'leandro',
-    print(){
-      console.log(teste)
-    }
+function Perceptron(size){
+  return{
+    weights: Array(++size).fill(0),
   }
 }
