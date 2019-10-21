@@ -1,7 +1,7 @@
 const Perceptron = (size, learningRate) =>{
   return{
-    weights: Array(++size).fill([0.75, 0.5, -0.6]),
-    lr: learningRate,
+    weights: Array(++size).fill(0),
+    lr: learningRate || 0.01,
     predict (inputs) {
       //console.log(this.weights)
       let activation = this.weights[0]
@@ -15,11 +15,15 @@ const Perceptron = (size, learningRate) =>{
       while(it < this.it){
         for(i in input){
           prediction = this.predict(input[i])
-          error = desired[i] - prediction
-          this.weights[0] += this.lr * error 
-          console.log(this.weights[0])
+          err = desired[i] - prediction
+          this.weights[0] += this.lr * err 
+          for(j in input){
+            this.weights[j+1] += this.lr * err * input[i][j]
+          }
         }
+        it += 2
       }
+      console.log(this.weights)
     } 
   }
 }
