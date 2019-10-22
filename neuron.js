@@ -22,6 +22,7 @@ const Perceptron = (size, learningRate, iterations) => {
           }
         }
         //console.log(it)
+        console.table(this.weights)
         it ++
       }
     } 
