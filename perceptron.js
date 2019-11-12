@@ -52,7 +52,7 @@ module.exports = class Perceptron {
 
         // get prediction
         let prediction = this.predict(this.x_train[i])
-        console.log('Expected: ' + this.y_train[i] + '    Model Output: ' + prediction)
+        console.log('Saída desejada: ' + this.y_train[i] + '    Saída do Modelo: ' + prediction)
 
         // update accuracy measures
         this.y_train[i] === prediction ? this.accuracy += 1 : this.accuracy -= 1
