@@ -1,6 +1,6 @@
 module.exports = class Perceptron {
 
-  constructor(x_train, y_train, epochs = 1000, learn_rate = 0.1) {
+  constructor(x_train, y_train, epochs = 1000, learn_rate = 0.35) {
 
     this.accuracy = 0
     this.samples = 0
