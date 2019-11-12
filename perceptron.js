@@ -32,7 +32,7 @@ module.exports = class Perceptron {
 
   // activation function
   activation (n) {
-    return n < 0 ? 0 : 1
+    return n < 0 ? -1 : 1
   }
 
   // y-hat output given an input tensor 
@@ -72,6 +72,7 @@ module.exports = class Perceptron {
 
       // accuracy post epoch
       console.log(this.current_accuracy())
+      console.log(e)
     }
   }
 }
