@@ -19,5 +19,7 @@ let p = new perceptron(dataset, desiredOutput, epochs=200, learn_rate=.1)
 
 p.fit()
 console.log('PREDICT')
+console.log(p.predict([1, 1]))
 console.log(p.predict([9.4, 6.4]))
+console.log(p.predict([2.5, 2.1]))
 console.log(p.weights)

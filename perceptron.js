@@ -1,19 +1,19 @@
 module.exports = class Perceptron {
 
-  constructor(x_train, y_train, epochs = 1000, learn_rate = 0.35) {
+  constructor(entries, desiredOutput, epochs = 1000, learn_rate = 0.35) {
 
     this.accuracy = 0
     this.samples = 0
-    this.x_train = x_train
-    this.y_train = y_train
+    this.entries = entries
+    this.desiredOutput = desiredOutput
 
     this.epochs = epochs
     this.learn_rate = learn_rate
 
     this.bias = 0
-    this.weights = new Array(x_train[0].length)
+    this.weights = new Array(entries[0].length)
 
-    for (let n = 0; n < x_train[0].length; n++) {
+    for (let n = 0; n < entries[0].length; n++) {
       this.weights[n] = this.random()
     }
   }
@@ -43,18 +43,18 @@ module.exports = class Perceptron {
 
     for (let e = 0; e < this.epochs; e++) {
 
-      for (let i = 0; i < this.x_train.length; i++) {
+      for (let i = 0; i < this.entries.length; i++) {
 
-        let prediction = this.predict(this.x_train[i])
-        console.log('Saída desejada: ' + this.y_train[i] + '    Saída do Modelo: ' + prediction)
+        let prediction = this.predict(this.entries[i])
+        console.log('Saída desejada: ' + this.desiredOutput[i] + 'Saída do Modelo: ' + prediction)
 
-        this.y_train[i] === prediction ? this.accuracy += 1 : this.accuracy -= 1
+        this.desiredOutput[i] === prediction ? this.accuracy += 1 : this.accuracy -= 1
         this.samples++
 
-        let loss = this.y_train[i] - prediction
+        let loss = this.desiredOutput[i] - prediction
 
         for (let w = 0; w < this.weights.length; w++) {
-          this.weights[w] += loss * this.x_train[i][w] * this.learn_rate
+          this.weights[w] += loss * this.entries[i][w] * this.learn_rate
         }
 
         this.bias += loss * this.learn_rate
