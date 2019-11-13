@@ -29,21 +29,23 @@ module.exports = class Perceptron {
 
   fit () {
 
-    for (let i = 0; i < this.entries.length; i++) {
-      //console.log(this.entries[i])
-      let prediction = this.predict(this.entries[i])
-      console.log('Saída desejada: ' + this.desiredOutput[i] + '  Saída do Modelo: ' + prediction)
-      let predicted = this.predict(this.entries[i])
-      let loss = predicted - this.desiredOutput[i]
-      if(loss !== 0){
-        for(let w = 0; this.weights.length; w++){
-          this.weights[w] += this.learn_rate * loss * this.entries[i][w]
+    for(let e = 0; e < this.epochs; e++){
+      for (let i = 0; i < this.entries.length; i++) {
+        let prediction = this.predict(this.entries[i])
+        console.log('Saída desejada: ' + this.desiredOutput[i] + '  Saída do Modelo: ' + prediction)
+        let loss = prediction - this.desiredOutput[i]
+        if(loss !== 0){
+          this.weights[0] = this.weights[0] * this.learn_rate * loss
+          this.weights[1] = this.weights[1] * this.learn_rate * loss
+          this.weights[2] = this.weights[2] * this.learn_rate * this.bias
         }
+  
+        console.log(loss)
+        console.log(i)
+        console.log(this.weights)
       }
-
-      console.log(loss)
     }
 
-    console.log(this.current_accuracy())
+    //console.log(this.current_accuracy())
   }
 }
