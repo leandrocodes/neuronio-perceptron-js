@@ -15,9 +15,9 @@ const dataset = [
 
 const desiredOutput = [1, -1, 1, -1, 1, -1, -1, 1, 1, 1, -1]
 
-let p = new perceptron(dataset, desiredOutput, 600, learn_rate=0.2)
+let p = new perceptron()
 
-p.fit()
+p.fit(dataset, desiredOutput)
 console.log('PREDICT')
 console.log(p.predict([1, 1]))
 console.log(p.predict([9.4, 6.4]))
