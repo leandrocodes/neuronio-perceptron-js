@@ -5,7 +5,7 @@
   let perceptron = require('./perceptron')
   let p = perceptron()
 ```
-### Você vai precisar de uma matris representando o seu Dataset também, junto de um vetor com as saídas desejadas.
+### Você vai precisar de uma matriz representando o seu Dataset também, junto de um vetor com as saídas desejadas.
 ```javascript 
 const dataset = [[1.0, 1.0], [9.4, 6.4], [2.5, 2.1]]
 
