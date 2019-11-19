@@ -15,7 +15,7 @@ const dataset = [
 
 const desiredOutput = [1, -1, 1, -1, 1, -1, -1, 1, 1, -1]
 
-let p = new perceptron()
+let p = perceptron()
 
 p.fit(dataset, desiredOutput)
 console.log('PREDICT')
