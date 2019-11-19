@@ -13,7 +13,7 @@ const dataset = [
   [7.8, 6.1]
 ]
 
-const desiredOutput = [1, -1, 1, -1, 1, -1, -1, 1, 1, 1, -1]
+const desiredOutput = [1, -1, 1, -1, 1, -1, -1, 1, 1, -1]
 
 let p = new perceptron()
 
