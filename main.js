@@ -18,7 +18,7 @@ const desiredOutput = [1, -1, 1, -1, 1, -1, -1, 1, 1, -1]
 let p = perceptron()
 
 p.fit(dataset, desiredOutput)
-console.log('PREDICT')
+/* console.log('PREDICT')
 console.log(p.predict([1, 1]))
 console.log(p.predict([9.4, 6.4]))
-console.log(p.predict([2.5, 2.1]))
+console.log(p.predict([2.5, 2.1])) */

@@ -25,8 +25,8 @@ const percerptron = () => {
 				}
 				epochs++
 			}
-			console.log(weights)
-			console.log(epochs)
+			console.table(weights)
+			console.log(`epochs number: ${epochs}`)
 		}
 	}
 }
